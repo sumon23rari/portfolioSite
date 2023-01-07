@@ -55,8 +55,11 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.959);
     z-index: 1;
     margin: 0 8%;
-   
 
+  }
+  .rescont{
+padding: 0 20px;
+color:#ddd;
   }
   
   .listd{
@@ -66,6 +69,7 @@
     color: #000;
     padding-top: 14px;
     padding-bottom: 6px;
+    text-decoration: none;
   }
   .listd:hover{
     color: tomato;
@@ -82,28 +86,30 @@
  .dropdown:hover .resdropdowncontent{
   display: block;
  }
+ .linkd{
+  color: #000;
+ }
   /* Create three equal columns that floats next to each other */
   .column {
     float: left;
     width: 33.33%;
     padding: 10px;
-
+    color: #ddd;
     height: 250px;
+ 
   }
   
   /* Style links inside the columns */
   .column a {
     float: none;
-    color: black;
+    color: tomato;
     padding: 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+    
   }
-  .linkd{
-    margin: 0;
-    text-decoration: none;
-  }
+                                                                             
 
   .caretdown{
     color: tomato;

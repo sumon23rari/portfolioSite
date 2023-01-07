@@ -22,7 +22,7 @@ export default function IndexPage() {
       
       <StickyProvider>
         <Layout>
-          <SEO title="Startup Landing 005" />
+          <SEO title="AppsBucket" />
           <Banner />
           <KeyFeature />
           <ServiceSection />

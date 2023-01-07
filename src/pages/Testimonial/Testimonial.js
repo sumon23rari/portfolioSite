@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
-import Blog from '../../../public/css/Blogs.module.css';
 import Header from 'components/header/header';
 import Sticky from 'react-stickynode';
 import TestimonialCard from 'sections/testimonial';
@@ -21,7 +20,7 @@ const Testimonial = () => {
         <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
          <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
        </Sticky>
-  <div className={Blog.uper}> </div>
+  <div   style={{paddingTop:'6%',paddingBottom:'4%'}}> </div>
       <TestimonialCard></TestimonialCard>
            <Footer></Footer>
        

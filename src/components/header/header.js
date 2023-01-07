@@ -18,7 +18,7 @@ export default function Header({ className }) {
           <Logo src={LogoDark} />
 
           <Flex as="nav" sx={styles.nav}>
-            <li class={Home.listd}>Home</li>
+            <li class={Home.listd}><Link href='/'>Home</Link></li>
           <li class={Home.dropdown}>
     <span class={Home.dropbtn}>projects 
     <span  className={Home.caretdown}>   <FaCaretDown></FaCaretDown></span>
@@ -50,7 +50,7 @@ export default function Header({ className }) {
   <li class={Home.listd}><Link href='/Blogs/Blogs' class={Home.linkd}>blogs</Link> </li>
   <li class={Home.listd}> <Link href='/Features/Features' class={Home.linkd}>Features</Link></li>
   <li class={Home.listd}> <Link href='/Testimonial/Testimonial' class={Home.linkd}>Testimonial</Link></li>
-  <li class={Home.listd}>Pricing</li>
+  <li class={Home.listd}> <Link href='/Pricing/Pricing' class={Home.linkd}>Pricing</Link></li>
           </Flex>
 
           <Button
@@ -101,7 +101,7 @@ const styles = {
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
     
       'nev > a': {
-        color: 'text',
+        color: 'red',
       },
     },
   },

@@ -21,7 +21,7 @@ function Blogs() {
        <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
         <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
       </Sticky>
- <div className={Blog.uper}> </div>
+ <div  style={{paddingTop:'8%',paddingBottom:'7%'}}> </div>
       <BlogSection></BlogSection>
           <Footer></Footer>
       

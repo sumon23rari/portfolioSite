@@ -4,16 +4,16 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from '../../contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'react-scroll';
 import { FaCaretDown } from "react-icons/fa";
+import Link from 'next/Link';
+import Home from '../../../public/css/Home.module.css';
+// import { Link } from 'react-scroll';
 import {
   FaFacebookF,
   FaTwitter,
   FaGithubAlt,
   FaDribbble,
 } from 'react-icons/fa';
-import Home from '../../../public/css/Home.module.css';
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
 
 const social = [
   {
@@ -63,7 +63,7 @@ const MobileDrawer = () => {
       <Scrollbars autoHide>
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
-          <li class={Home.listd}>Home</li>
+          <li class={Home.listd}><Link sx={styles.linkds} href='/'>Home</Link></li>
           <li class={Home.dropdown}>
     <span class={Home.dropbtn}>projects
     <span className={Home.caretdown}>   <FaCaretDown></FaCaretDown></span>
@@ -71,37 +71,32 @@ const MobileDrawer = () => {
     <div  class={Home.resdropdowncontent}>
       <div class={Home.row}>
         <div sx={styles.column} >
-          <h3>Category 1</h3>
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <h3 className={Home.rescont}>Category 1</h3>
+        
         </div>
         <div sx={styles.column}>
-          <h3>Category 2</h3>
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <h3 className={Home.rescont}>Category 2</h3>
+        
         </div>
         <div sx={styles.column}>
-          <h3>Category 3</h3>
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <h3 className={Home.rescont}>Category 3</h3>
+         
         </div>
       </div>
     </div>
   </li>
- <li class={Home.listd}><Link href='/Blogs/Blogs' class={Home.linkd}>blogs</Link> </li>
-  <li class={Home.listd}>Features</li>
-  <li class={Home.listd}>Testimonial</li>
-  <li class={Home.listd}>Pricing</li>
+ <li class={Home.listd}><Link  href='/Blogs/Blogs' sx={styles.linkds}>blogs</Link> </li>
+  <li class={Home.listd}><Link href='/Features/Features' sx={styles.linkds}>Features</Link></li>
+  <li class={Home.listd}> <Link href='/Testimonial/Testimonial' sx={styles.linkds}>Testimonial</Link></li>
+  <li class={Home.listd}><Link href='/Pricing/Pricing' sx={styles.linkds}>Pricing</Link></li>
           </Box>
 
           <Box sx={styles.menuFooter}>
             <Box sx={styles.social}>
               {social.map(({ path, icon }, i) => (
                 <Box as="span" key={i} sx={styles.social.icon}>
-                  <Link to={path}>{icon}</Link>
+                  {/* <Link to={path}>{icon}</Link> */}
+                  <a href={path}>{icon}</a>
                 </Box>
               ))}
             </Box>
@@ -159,23 +154,29 @@ const styles = {
     a: {
       fontSize: '16px',
       fontWeight: '500',
-      color: 'text_white',
+      color: '#222',
       py: '15px',
       cursor: 'pointer',
+      textDecoration:'none',               
       borderBottom: '1px solid #e8e5e5',
       transition: 'all 0.25s',
       '&:hover': {
-        color: 'secondary',
+        color: 'primary',
       },
       '&.active': {
         color: 'secondary',
       },
     },
   },
+  linkds:{
+    textDecoration: "none",
+    color:'red'
+  },
 column:{
   width:'100%',
  border:"none"
 },
+
   menuFooter: {
     width: '100%',
     display: 'flex',
