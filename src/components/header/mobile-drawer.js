@@ -7,7 +7,12 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { FaCaretDown } from "react-icons/fa";
 import Link from 'next/Link';
 import Home from '../../../public/css/Home.module.css';
-// import { Link } from 'react-scroll';
+import image1 from '../../assets/projects/img1.jpg';
+import image2 from '../../assets/projects/img2.jpg';
+import image3 from '../../assets/projects/img3.png';
+import image4 from '../../assets/projects/img4.jpg';
+import image5 from '../../assets/projects/img5.jpg';
+import image6 from '../../assets/projects/img6.jpg';
 import {
   FaFacebookF,
   FaTwitter,
@@ -34,6 +39,32 @@ const social = [
   },
 ];
 
+const projectItem = [
+  {
+    path: '/',
+    imgs: image1
+  },
+  {
+    path: '/',
+    imgs: image2
+  },
+  {
+    path: '/',
+    imgs: image3
+  },
+  {
+    path: '/',
+    imgs: image4
+  },
+  {
+    path: '/',
+    imgs: image5
+  },
+  {
+    path: '/',
+    imgs: image6
+  },
+]
 const MobileDrawer = () => {
   const { state, dispatch } = useContext(DrawerContext);
 
@@ -45,7 +76,7 @@ const MobileDrawer = () => {
   }, [dispatch]);
 
 
- 
+
   return (
     <Drawer
       width="320px"
@@ -60,35 +91,37 @@ const MobileDrawer = () => {
       drawerStyle={styles.drawer}
       closeBtnStyle={styles.close}
     >
-      <Scrollbars autoHide>
+      <Scrollbars>
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
-          <li class={Home.listd}><Link sx={styles.linkds} href='/'>Home</Link></li>
-          <li class={Home.dropdown}>
-    <span class={Home.dropbtn}>projects
-    <span className={Home.caretdown}>   <FaCaretDown></FaCaretDown></span>
-    </span>
-    <div  class={Home.resdropdowncontent}>
-      <div class={Home.row}>
-        <div sx={styles.column} >
-          <h3 className={Home.rescont}>Category 1</h3>
-        
-        </div>
-        <div sx={styles.column}>
-          <h3 className={Home.rescont}>Category 2</h3>
-        
-        </div>
-        <div sx={styles.column}>
-          <h3 className={Home.rescont}>Category 3</h3>
-         
-        </div>
-      </div>
-    </div>
-  </li>
- <li class={Home.listd}><Link  href='/Blogs/Blogs' sx={styles.linkds}>blogs</Link> </li>
-  <li class={Home.listd}><Link href='/Features/Features' sx={styles.linkds}>Features</Link></li>
-  <li class={Home.listd}> <Link href='/Testimonial/Testimonial' sx={styles.linkds}>Testimonial</Link></li>
-  <li class={Home.listd}><Link href='/Pricing/Pricing' sx={styles.linkds}>Pricing</Link></li>
+            <li class={Home.listd}><Link sx={styles.linkds} href='/'>Home</Link></li>
+            <li class={Home.dropdown}>
+              <span class={Home.dropbtn}>projects
+                <span className={Home.caretdown}>   <FaCaretDown></FaCaretDown></span>
+              </span>
+              <div class={Home.resdropdowncontent}>
+                <div class={Home.row}>
+                  <div sx={styles.pro}>
+
+
+                    {
+                      projectItem.map(({ path, imgs }, i) => (
+                        <Box>
+                          <Link href={path} key={i}><img className={Home.imgmobile} src={imgs} alt="" /></Link>
+                        </Box>
+                      ))
+                    }
+
+
+                  </div>
+
+                </div>
+              </div>
+            </li>
+            <li class={Home.listd}><Link href='/Blogs/Blogs' sx={styles.linkds}>blogs</Link> </li>
+            <li class={Home.listd}><Link href='/Features/Features' sx={styles.linkds}>Features</Link></li>
+            <li class={Home.listd}> <Link href='/Testimonial/Testimonial' sx={styles.linkds}>Testimonial</Link></li>
+            <li class={Home.listd}><Link href='/Pricing/Pricing' sx={styles.linkds}>Pricing</Link></li>
           </Box>
 
           <Box sx={styles.menuFooter}>
@@ -157,7 +190,7 @@ const styles = {
       color: '#222',
       py: '15px',
       cursor: 'pointer',
-      textDecoration:'none',               
+      textDecoration: 'none',
       borderBottom: '1px solid #e8e5e5',
       transition: 'all 0.25s',
       '&:hover': {
@@ -168,14 +201,14 @@ const styles = {
       },
     },
   },
-  linkds:{
+  linkds: {
     textDecoration: "none",
-    color:'red'
+    color: 'red'
   },
-column:{
-  width:'100%',
- border:"none"
-},
+  column: {
+    width: '100%',
+    border: "none"
+  },
 
   menuFooter: {
     width: '100%',

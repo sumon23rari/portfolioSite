@@ -9,6 +9,12 @@ import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
 import Home from '../../../public/css/Home.module.css';
 import { FaCaretDown } from "react-icons/fa";
+import image1 from '../../assets/projects/img1.jpg';
+import image2 from '../../assets/projects/img2.jpg';
+import image3 from '../../assets/projects/img3.png';
+import image4 from '../../assets/projects/img4.jpg';
+import image5 from '../../assets/projects/img5.jpg';
+import image6 from '../../assets/projects/img6.jpg';
 
 export default function Header({ className }) {
   return (
@@ -21,28 +27,22 @@ export default function Header({ className }) {
             <li class={Home.listd}><Link href='/'>Home</Link></li>
           <li class={Home.dropdown}>
     <span class={Home.dropbtn}>projects 
-    <span  className={Home.caretdown}>   <FaCaretDown></FaCaretDown></span>
+      <FaCaretDown  className={Home.caretdown}></FaCaretDown>
   
     </span>
     <div class={Home.dropdowncontent}>
       <div class={Home.row}>
         <div class={Home.column}>
        
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-        <div class={Home.column}>
-          
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-        <div class={Home.column}>
-        
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+        <img className={Home.imgd} src={image1}  alt="image1" />
+        <img className={Home.imgd}  src={image6} alt="image6" />
+        <img className={Home.imgd}  src={image3} alt="image3" />
+        <img className={Home.imgd}  src={image4} alt="image4" />
+        <img className={Home.imgd}  src={image2} alt="image2" />
+        <img className={Home.imgd}  src={image5} alt="image5" />
+        <img className={Home.imgd}  src={image3} alt="image3" />
+        <img className={Home.imgd}  src={image6} alt="image6" />
+        <img className={Home.imgd}  src={image2} alt="image2" />
         </div>
       </div>
     </div>
